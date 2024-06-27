@@ -1,0 +1,66 @@
+<mat-toolbar class="mat-elevation-z8" [ngClass]="themeService.getTheme() + '-theme'" style="color: white;"><button mat-icon-button *ngIf="sidenav.mode === 'side'" (click)="sidenav.toggle()">
+  <mat-icon style="color: white;" *ngIf="!sidenav.opened">menu</mat-icon>
+  <mat-icon style="color: white;" *ngIf="sidenav.opened">close</mat-icon>
+</button>
+Article Hub
+  <span class="spacer"></span>
+  <button mat-icon-button [mat-menu-trigger-for]="menu">
+    <mat-icon style="color: white;">palette</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <div class="button-container">
+      <button mat-fab class="custom-fab" [ngClass]="{'active': themeService.getTheme() === 'primary'}" color="primary" (click)="changeTheme('primary')" aria-label="Change Theme to Primary">
+        <mat-icon *ngIf="themeService.getTheme() === 'primary'">done</mat-icon>
+      </button>
+      <button mat-fab class="custom-fab" [ngClass]="{'active': themeService.getTheme() === 'accent'}" color="accent" (click)="changeTheme('accent')" aria-label="Change Theme to Accent">
+        <mat-icon *ngIf="themeService.getTheme() === 'accent'">done</mat-icon>
+      </button>
+      <button mat-fab class="custom-fab" [ngClass]="{'active': themeService.getTheme() === 'warn'}" color="warn" (click)="changeTheme('warn')" aria-label="Change Theme to Warn">
+        <mat-icon *ngIf="themeService.getTheme() === 'warn'">done</mat-icon>
+      </button>
+    </div>
+  </mat-menu>
+  <button mat-icon-button (click)="logout()">
+    <mat-icon style="color: white;">exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" opened="true" mode="side">
+    <img class="avatar mat-elevation-z8" src="../../../assets/img/profile.png" alt="..." />
+    <mat-divider class="custom-divider"></mat-divider>
+    <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/article_Hub/dashboard">
+      <mat-icon>home</mat-icon>
+      <span>Dashboard</span>
+    </button>
+
+    <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/article_Hub/users">
+      <mat-icon>group</mat-icon>
+      <span>User</span>
+    </button>
+
+    <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/article_Hub/category">
+      <mat-icon>apartment</mat-icon>
+      <span>Category</span>
+    </button>
+
+    <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/article_Hub/article">
+      <mat-icon>storage</mat-icon>
+      <span>Article</span>
+    </button>
+
+    <mat-divider class="custom-divider"></mat-divider>
+    <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/article_Hub/help">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content style="background: radial-gradient(red, #332042);">
+    <div class="content mat-elevation-z8" style="background: white;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

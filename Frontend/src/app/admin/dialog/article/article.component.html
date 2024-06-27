@@ -1,0 +1,62 @@
+<mat-toolbar [color]="themeService.getTheme()">
+  <mat-toolbar-row class="row">
+    <span class="title-center">{{ dialogData.action }}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="articleForm">
+    <div class="form-container">
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field" [color]="themeService.getTheme()">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="title" required>
+          <mat-error *ngIf="articleForm.controls['title'].touched && articleForm.controls['title'].invalid">
+            <span *ngIf="articleForm.controls['title'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <div fxFlex style="margin:10px">
+          <quill-editor formControlName="content" [styles]="{ height: '300px' }" theme="snow" placeholder="Article Content..."></quill-editor>
+
+          <mat-error *ngIf="articleForm.controls['content'].touched && articleForm.controls['content'].invalid">
+            <span *ngIf="articleForm.controls['content'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </div>
+      </div>
+
+        <mat-form-field appearance="fill" class="form-field" [color]="themeService.getTheme()">
+          <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryId" required>
+          <mat-option *ngFor="let category of categorys" [value]="category.id">{{ category.name }}</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="articleForm.controls['categoryId'].touched && articleForm.controls['categoryId'].invalid">
+          <span *ngIf="articleForm.controls['categoryId'].errors?.['required']">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="form-field" [color]="themeService.getTheme()">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status" required>
+          <mat-option value="draft">Draft </mat-option>
+          <mat-option value="published">Publish </mat-option>
+        </mat-select>
+        <mat-error *ngIf="articleForm.controls['status'].touched && articleForm.controls['status'].invalid">
+          <span *ngIf="articleForm.controls['status'].errors?.['required']">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [color]="themeService.getTheme()" type="submit" (click)="handleSubmit()"
+    [disabled]="!(articleForm.valid && articleForm.dirty)">
+    {{action}}
+  </button>
+  <button mat-raised-button [color]="themeService.getTheme()" mat-dialog-close>Close</button>
+</mat-dialog-actions>

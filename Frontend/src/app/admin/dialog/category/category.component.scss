@@ -1,0 +1,112 @@
+.title-center {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+mat-form-field {
+  padding: 5px;
+}
+
+.mat-toolbar {
+  margin: 0;
+  width: 100%;
+  background-color: #7b1fa2;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex {
+  flex: 1;
+}
+
+span {
+  color: #fff;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-field {
+  flex: 1;
+}
+
+button {
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .title-center {
+    font-size: 1.2rem;
+  }
+
+  .form-container {
+    gap: 12px;
+  }
+
+  .form-row {
+    gap: 12px;
+  }
+
+  .form-field {
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .title-center {
+    font-size: 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-container {
+    gap: 8px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .mat-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .mat-toolbar {
+    padding: 0 8px;
+  }
+}

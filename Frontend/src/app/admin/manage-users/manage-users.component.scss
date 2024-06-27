@@ -1,0 +1,59 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.responsive_table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button {
+  border-radius: 0px;
+}
+
+.primary-button {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.accent-button {
+  background-color: #ff4081;
+  color: white;
+}
+
+.warn-button {
+  background-color: #f44336;
+  color: white;
+}
+
+// Media queries para celular e iPad
+@media only screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .header-container button {
+    margin-top: 10px;
+  }
+
+  .mat-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .mat-table th, .mat-table td {
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .responsive_table {
+    overflow-x: auto;
+  }
+}

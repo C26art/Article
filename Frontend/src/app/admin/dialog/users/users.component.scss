@@ -1,0 +1,110 @@
+.title-center {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+mat-form-field {
+  padding: 5px;
+}
+
+.mat-toolbar {
+  margin: 0;
+  width: 100%;
+  background-color: #7b1fa2;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex {
+  flex: 1;
+}
+
+span {
+  color: #fff;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-field {
+  flex: 1;
+}
+
+button {
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .mat-toolbar-row .title-center {
+    text-align: center;
+    width: 100%;
+  }
+
+  .form-container {
+    gap: 12px;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .mat-toolbar-row .title-center {
+    text-align: center;
+    width: 100%;
+  }
+
+  .form-container {
+    gap: 8px;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .mat-dialog-content div {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body.primary-theme .custom-fab.active {
+  background-color: #3f51b5 !important;
+}
+
+body.accent-theme .custom-fab.active {
+  background-color: #e91e63 !important;
+}
+
+body.warn-theme .custom-fab.active {
+  background-color: #f44336 !important;
+}
+
+.primary-theme .mat-toolbar {
+  background-color: #3f51b5 !important;
+}
+
+.accent-theme .mat-toolbar {
+  background-color: #e91e63 !important;
+}
+
+.warn-theme .mat-toolbar {
+  background-color: #f44336 !important;
+}
+
+
+.mat-chip-option-disabled {
+    background-color:lightgreen !important;
+    opacity: 1 !important;
+    text-align: center !important;
+  }
+
+  .mat-chip-option-disabled-false{
+    background-color:#FFCCCB !important;
+    opacity: 1 !important;
+  }

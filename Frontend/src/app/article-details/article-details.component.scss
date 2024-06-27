@@ -1,0 +1,52 @@
+.spacer{
+  flex: auto;
+}
+
+.mat-toolbar {
+  margin: 0;
+  width: 100%;
+  background-color: #7b1fa2;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex {
+  flex: 1;
+}
+
+span {
+  color: #fff;
+}
+
+button {
+  border-radius: 6px;
+}
+
+
+@media (max-width: 600px) {
+
+  .mat-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .mat-toolbar {
+    padding: 0 8px;
+  }
+}
+

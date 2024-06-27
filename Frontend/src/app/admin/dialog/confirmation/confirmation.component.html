@@ -1,0 +1,12 @@
+<mat-dialog-content class="mat-typography">
+  <h2 style="font-size: 14px; color: #333;">Are you sure you want to {{details.message}}?</h2>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [color]="themeService.getTheme()" (click)="handleChangeAction()">
+    Yes
+  </button>
+  <button mat-raised-button [color]="themeService.getTheme()" mat-dialog-close>
+    No
+  </button>
+</mat-dialog-actions>
